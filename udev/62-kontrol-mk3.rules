@@ -1,0 +1,6 @@
+# Native Instruments Kontrol S49/S61/S88 MK3: give the logged-in user access to
+# the hidraw nodes, so kontrol-lightguide can drive the light guide without root.
+# Keep the number below 73, uaccess has to be tagged before 73-seat-late.rules runs.
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="17cc", ATTRS{idProduct}=="2100", TAG+="uaccess"
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="17cc", ATTRS{idProduct}=="2110", TAG+="uaccess"
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="17cc", ATTRS{idProduct}=="2120", TAG+="uaccess"
